@@ -1,13 +1,63 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
-# Use a package of configuration called an orb.
-orbs:
-  # Declare a dependency on the welcome-orb
-  welcome: circleci/welcome-orb@0.4.1
-# Orchestrate or schedule a set of jobs
+
+executors:
+  hadolint:
+    description: Hadolint Docker image
+    docker:
+      - image: 'hadolint/hadolint:<<parameters.tag>>'
+    parameters:
+      resource-class:
+        default: small
+        enum:
+          - small
+          - medium
+          - medium+
+          - large
+          - xlarge
+        type: enum
+      tag:
+        default: latest-debian
+        description: >
+          Specific Hadolint image (make sure to use a `debian` tag, otherwise image
+          will not be usable on CircleCI):
+          https://hub.docker.com/r/hadolint/hadolint/tags
+        type: string
+    resource_class: <<parameters.resource-class>>
+
+jobs:
+  hellolint:
+    parameters:
+      version:
+        default: latest-debian
+        description: >
+          Specific Hadolint image (make sure to use a `debian` tag, otherwise image
+          will not be usable on CircleCI):
+          https://hub.docker.com/r/hadolint/hadolint/tags
+        type: string
+
+      executor-class:
+        type: enum
+        description: Resource class to use for the Hhdolint executor
+        default: small
+        enum:
+          - small
+          - medium
+          - medium+
+          - large
+          - xlarge
+        
+
+    executor:
+      name: hadolint
+      tag: <<parameters.hadolint-tag>>
+      resource-class: <<parameters.executor-class>>
+     
+    steps:
+      - run: hadolint --version
+          
 workflows:
-  # Name the workflow "welcome"
   welcome:
-    # Run the welcome/run job in its own container
     jobs:
-      - welcome/run
+      - hellolint:
+          executor-class: medium+
+          version: 2.2.0-debian
