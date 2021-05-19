@@ -49,7 +49,7 @@ jobs:
 
     executor:
       name: hadolint
-      tag: <<parameters.hadolint-tag>>
+      tag: <<parameters.version>>
       resource-class: <<parameters.executor-class>>
      
     steps:
