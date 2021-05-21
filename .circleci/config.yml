@@ -11,10 +11,10 @@ commands:
     steps:
       - run:
           environment:
-            SHOULD_FAIL: <<parameters.fail-if-semver-not-indicated>>
+            SHOULD_FAIL: "<<parameters.fail-if-semver-not-indicated>>"
           command: |
             CheckIncrement() {
-                          if [ $SHOULD_FAIL ] ;then
+                          if [ "$SHOULD_FAIL" == "true" ] ;then
                             echo "Hello"
                           fi
                           
