@@ -11,8 +11,9 @@ commands:
     steps:
       - run:
           environment:
-            SHOULD_FAIL: "<<parameters.fail-if-semver-not-indicated>>"
+            SHOULD_FAIL: <<parameters.fail-if-semver-not-indicated>>
           command: |
+            echo <<parameters.fail-if-semver-not-indicated>>
             echo $SHOULD_FAIL
             echo ${SHOULD_FAIL}
             
