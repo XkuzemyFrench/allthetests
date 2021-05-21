@@ -13,6 +13,9 @@ commands:
           environment:
             SHOULD_FAIL: "<<parameters.fail-if-semver-not-indicated>>"
           command: |
+            echo $SHOULD_FAIL
+            echo ${SHOULD_FAIL}
+            
             CheckIncrement() {
                           if [ "$SHOULD_FAIL" == "true" ] ;then
                             echo "Hello"
