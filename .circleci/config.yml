@@ -23,7 +23,7 @@ commands:
 jobs:
   trymote:
     docker:
-      - image: circleci/welcome-config-image
+      - image: circleci/python
     steps:
       - promote:
           fail-if-semver-not-indicated: true
