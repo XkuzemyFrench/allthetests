@@ -18,7 +18,7 @@ commands:
             echo ${SHOULD_FAIL}
             
             CheckIncrement() {
-                          if [ "$SHOULD_FAIL" == "true" ] ;then
+                          if [ ! "$SHOULD_FAIL" ] ;then
                             echo "Hello"
                           fi
                           
@@ -35,7 +35,7 @@ jobs:
       - image: circleci/python
     steps:
       - promote:
-          fail-if-semver-not-indicated: true
+          fail-if-semver-not-indicated: false
     
  
 workflows:
