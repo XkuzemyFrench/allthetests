@@ -35,7 +35,7 @@ jobs:
       - image: circleci/python
     steps:
       - promote:
-          fail-if-semver-not-indicated: false
+          fail-if-semver-not-indicated: true
     
  
 workflows:
