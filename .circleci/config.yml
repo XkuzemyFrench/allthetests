@@ -14,8 +14,13 @@ commands:
             SHOULD_FAIL: <<parameters.fail-if-semver-not-indicated>>
           command: |
             CheckIncrement() {
-                          echo "$SHOULD_FAIL"
-                          echo "${SHOULD_FAIL}"
+                          if $SHOULD_FAIL ;then
+                            echo "Hello"
+                          fi
+                          
+                          if ${SHOULD_FAIL}; then
+                            echo "Hiya"
+                          fi
             }
             
             CheckIncrement
