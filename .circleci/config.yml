@@ -11,7 +11,7 @@ commands:
     steps:
       - run:
           environment:
-            SHOULD_FAIL: <<fail-if-semver-not-indicated>>
+            SHOULD_FAIL: <<parameters.fail-if-semver-not-indicated>>
           command: |
             CheckIncrement() {
                           echo "$SHOULD_FAIL"
