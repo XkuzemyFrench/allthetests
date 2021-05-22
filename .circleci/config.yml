@@ -6,7 +6,7 @@ jobs:
       - image: circleci/python
     steps:
       - run: |
-          set +o pipefail
+          set +eo pipefail
           ls /toto
       - run:
           command: echo "This ran"
