@@ -10,7 +10,7 @@ jobs:
           ls /toto
       - run:
           command: echo "This ran"
-          when: always
+#           when: always
     
  
 workflows:
