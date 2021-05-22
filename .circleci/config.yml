@@ -4,13 +4,12 @@ jobs:
   trymote:
     docker:
       - image: circleci/python
+    shell: set +eo pipefail
     steps:
       - run: |
           ls /toto
       - run:
-          command: |
-            set +eo pipefail
-            echo "This ran"
+          command: echo "This ran"
           when: always
     
  
