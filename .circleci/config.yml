@@ -4,7 +4,7 @@ jobs:
   trymote:
     docker:
       - image: circleci/python
-    shell: set +eo pipefail
+    shell: +eo pipefail
     steps:
       - run: |
           ls /toto
