@@ -5,7 +5,9 @@ jobs:
     docker:
       - image: circleci/python
     steps:
-      - run: ls /toto
+      - run: |
+          set +e
+          ls /toto
       - run: echo "This ran"
     
  
