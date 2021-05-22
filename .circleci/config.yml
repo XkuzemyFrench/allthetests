@@ -6,7 +6,6 @@ jobs:
       - image: circleci/python
     steps:
       - run: |
-          set +e
           ls /toto
           echo "Same step as failing command"
       - run:
