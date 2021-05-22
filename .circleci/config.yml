@@ -6,11 +6,12 @@ jobs:
       - image: circleci/python
     steps:
       - run: |
-          set +eo pipefail
           ls /toto
       - run:
-          command: echo "This ran"
-#           when: always
+          command: |
+            set +eo pipefail
+            echo "This ran"
+          when: always
     
  
 workflows:
