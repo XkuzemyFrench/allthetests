@@ -9,7 +9,8 @@ jobs:
           set +e
           ls /toto
           echo "Same step as failing command"
-      - run: echo "This ran"
+      - run:
+          command: echo "This ran"
           when: always
     
  
