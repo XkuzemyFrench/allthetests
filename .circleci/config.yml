@@ -6,11 +6,11 @@ jobs:
       - image: circleci/python
     steps:
       - run: |
+          set +o pipefail
           ls /toto
-          echo "Same step as failing command"
       - run:
           command: echo "This ran"
-          when: always
+#           when: always
     
  
 workflows:
