@@ -8,7 +8,9 @@ jobs:
     steps:
       - run:
           shell: /bin/bash +o errexit
-          command: ls /toto
+          command: |
+            ls /toto
+            true
       - run:
           command: echo "This ran"
 #           when: always
