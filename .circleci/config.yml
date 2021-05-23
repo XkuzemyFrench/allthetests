@@ -15,7 +15,7 @@ jobs:
           command: echo "This ran"
 #           when: always
       - run: |
-          if [ $EXIT_1 != 0]; then
+          if [ $EXIT_1 != 0 ]; then
             echo "ls failed"
           fi
     
