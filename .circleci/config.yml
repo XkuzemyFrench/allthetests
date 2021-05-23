@@ -4,7 +4,7 @@ jobs:
   trymote:
     docker:
       - image: circleci/python
-    shell: /bin/bash +e pipefail
+    shell: /bin/bash +e
 
     steps:
       - run:
