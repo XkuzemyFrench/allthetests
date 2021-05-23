@@ -7,13 +7,17 @@ jobs:
 
     steps:
       - run:
-          shell: /bin/bash +o errexit
+          shell: /bin/bash +eo pipefail
           command: |
-            ls /toto
+            ls /toto; echo 'export EXIT_1=$?' >> $BASH_ENV
             true
       - run:
           command: echo "This ran"
 #           when: always
+      - run: |
+          if [ $EXIT_1 != 0]; then
+            echo "ls failed"
+          fi
     
  
 workflows:
