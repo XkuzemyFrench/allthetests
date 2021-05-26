@@ -1,19 +1,13 @@
 version: 2.1
-
+orbs:
+  newman: postman/newman@0.0.2
 jobs:
   lenew:
-    docker:
-      - image: postman/newman:4.4.1
-
+    executor: newman/postman-newman-docker
     steps:
-      - run: echo "Hello"
-      - run :
-          name: Run check 1
-          command: echo "Run check 1"
-      - run :
-          name: Run check 2
-          command: echo "Run check 1"
-
+      - checkout
+      - newman/newman-run:
+          collection: orbtest.newman.json
  
 workflows:
   welcome:
