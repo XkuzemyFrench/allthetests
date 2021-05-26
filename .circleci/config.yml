@@ -7,9 +7,9 @@ jobs:
     steps:
       - checkout
       - newman/newman-run:
-          collection: orbtest.newman.json
-          delay-request: 1000
-          additional-options: -r cli,junit
+          collection: "orbtest.newman.json"
+          delay-request: "1000"
+          additional-options: "-r cli,junit"
           
       - run:
           name: Install dependencies
