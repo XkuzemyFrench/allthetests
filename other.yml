@@ -1,0 +1,16 @@
+version: 2.1
+
+jobs:
+  trymote:
+    docker:
+      - image: circleci/python
+
+    steps:
+      - run:
+          command: |
+            echo "Hello"
+
+workflows:
+  welcome:
+    jobs:
+      - trymote
