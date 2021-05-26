@@ -28,7 +28,7 @@ jobs:
                    filters:
                      branches:
                        only:
-                         - master
+                         - main
             EOF
       - continuation/continue:
           configuration_path: main.yml
