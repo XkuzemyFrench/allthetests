@@ -7,14 +7,14 @@ jobs:
     steps:
       - checkout
       - newman/newman-run:
-          collection: "orbtest.newman.json"
-          delay-request: "1000"
-          additional-options: "-r cli,junit"
+          collection: 'orbtest.newman.json'
+          delay-request: '1000'
+          additional-options: '-r cli,junit'
           
-      - run:
+      - run :
           name: Install dependencies
           command: apk add --update ca-certificates openssl && update-ca-certificates
-      - run:
+      - run :
           name: Save test results
           command: |
               mkdir  -p ~/test-results/newman
