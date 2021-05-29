@@ -1,7 +1,11 @@
 version: 2.1
 
 setup: true
- 
+
+parameters:
+  condition:
+    type: boolean
+                
 orbs:
   continuation: circleci/continuation@0.1.2
 
