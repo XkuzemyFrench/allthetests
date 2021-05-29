@@ -23,6 +23,7 @@ jobs:
             parameters:
               condition:
                 type: boolean
+                default: false
             jobs:
               job1:
                 docker:
