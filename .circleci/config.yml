@@ -11,7 +11,7 @@ orbs:
   continuation: circleci/continuation@0.1.2
 
 jobs:
-  paameters:
+  parameters:
     lacondition:
       type: env_var_nme
       default: condition_needed
