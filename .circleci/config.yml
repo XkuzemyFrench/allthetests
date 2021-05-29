@@ -38,7 +38,7 @@ jobs:
             EOF
       - continuation/continue:
           configuration_path: main.yml
-          parameters: '{"condition":"$condition_needed"}'
+          parameters: '{"condition":"${!condition_needed}"}'
 
 workflows:
   setup:
