@@ -10,13 +10,13 @@ parameters:
 orbs:
   continuation: circleci/continuation@0.1.2
 
-jobs:
-  parameters:
+jobs:  
+  setup:
+    parameters:
     lacondition:
       type: env_var_nme
       default: condition_needed
       
-  setup:
     executor: continuation/default
     steps:
       - checkout
