@@ -4,8 +4,8 @@ setup: true
 
 parameters:
   condition:
-    type: boolean
-    default: false
+    type: string
+    default: ''
                 
 orbs:
   continuation: circleci/continuation@0.1.2
@@ -22,8 +22,8 @@ jobs:
             version: 2.1
             parameters:
               condition:
-                type: boolean
-                default: false
+                type: string
+                default: ''
             jobs:
               job1:
                 docker:
