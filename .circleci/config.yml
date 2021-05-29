@@ -13,9 +13,9 @@ orbs:
 jobs:  
   setup:
     parameters:
-    lacondition:
-      type: env_var_nme
-      default: condition_needed
+      lacondition:
+        type: env_var_nme
+        default: condition_needed
       
     executor: continuation/default
     steps:
