@@ -1,41 +1,19 @@
 version: 2.1
 
-commands:
-  promote:
-    parameters:
-      fail-if-semver-not-indicated:
-        description: |
-            Whether to fail if the commit subject did not include [semver:patch|minor|major|skip]
-        type: boolean
-        
-    steps:
-      - run:
-          environment:
-            SHOULD_FAIL: <<parameters.fail-if-semver-not-indicated>>
-          command: |
-            echo <<parameters.fail-if-semver-not-indicated>>
-            echo $SHOULD_FAIL
-            echo ${SHOULD_FAIL}
-            
-            CheckIncrement() {
-                          if [ "$SHOULD_FAIL" == "1" ];then
-                            echo "Hello"
-                          fi
-                          
-                          if [ "${SHOULD_FAIL}" == "0" ]; then
-                            echo "Hiya"
-                          fi
-            }
-            
-            CheckIncrement
+parameters: 
+  condition:
+    type: string
+    default: $condition_needed
 
 jobs:
   trymote:
     docker:
       - image: circleci/python
     steps:
-      - promote:
-          fail-if-semver-not-indicated: true
+      - run: echo "Hello there"
+      - run: echo << pipeline.parameters.condition >>
+      
+      
     
  
 workflows:
