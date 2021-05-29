@@ -14,7 +14,7 @@ jobs:
   setup:
     parameters:
       lacondition:
-        type: env_var_nme
+        type: env_var_name
         default: condition_needed
       
     executor: continuation/default
