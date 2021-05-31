@@ -45,3 +45,5 @@ workflows:
           configuration_path: other.yml
           requires:
             - setup
+          pre-steps:
+            - checkout
