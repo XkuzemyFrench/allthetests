@@ -28,7 +28,6 @@ jobs:
                   - image: cimg/base:2021.04
                 steps:
                   - run: echo dynamic config!
-                  - run: echo << pipeline.parameters.condition >>
             workflows:
              workflow1:
               jobs:
