@@ -13,27 +13,27 @@ jobs:
     steps:
       - checkout
       - run: echo "Setting up..."
-#       - run:
-#           name: Generate config
-#           command: |
-#             cat > main.yml \<<- "EOF"
-#             version: 2.1
-#             parameters:
-#               condition:
-#                 type: string
-#                 default: ''
-#             jobs:
-#               job1:
-#                 docker:
-#                   - image: cimg/base:2021.04
-#                 steps:
-#                   - run: echo dynamic config!
-#                   - run: echo << pipeline.parameters.condition >>
-#             workflows:
-#              workflow1:
-#               jobs:
-#                - job1
-#             EOF
+      - run:
+          name: Generate config
+          command: |
+            cat > main.yml \<<- "EOF"
+            version: 2.1
+            parameters:
+              condition:
+                type: string
+                default: ''
+            jobs:
+              job1:
+                docker:
+                  - image: cimg/base:2021.04
+                steps:
+                  - run: echo dynamic config!
+                  - run: echo << pipeline.parameters.condition >>
+            workflows:
+             workflow1:
+              jobs:
+               - job1
+            EOF
 #       - continuation/continue:
 #           configuration_path: main.yml
 
@@ -42,8 +42,8 @@ workflows:
     jobs:
       - setup
       - continuation/continue:
-          configuration_path: other.yml
+          configuration_path: main.yml
           requires:
             - setup
-          pre-steps:
-            - checkout
+#           pre-steps:
+#             - checkout
