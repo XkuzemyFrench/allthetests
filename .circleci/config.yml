@@ -19,4 +19,8 @@ jobs:
 workflows:
   welcome:
     jobs:
-      - trymote
+      - hold: # <<< A job that will require manual approval in the CircleCI web application.
+          type: approval
+      - trymote:
+          requires:
+            - hold
