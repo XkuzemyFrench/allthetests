@@ -11,7 +11,7 @@ jobs:
       - image: circleci/python
     steps:
       - run: echo "Hello there"
-      - run: echo << parameters.condition >>
+      - run: echo ${<< parameters.condition >>}
       - run: echo $FOO
       
 workflows:
