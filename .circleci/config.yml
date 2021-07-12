@@ -18,8 +18,8 @@ workflows:
   build:
     parameters: 
       bilou:
-        type: boolean
-        default: true
+        type: env_var_name
+        default: FOO
     jobs:
       - try:
           post-steps:
