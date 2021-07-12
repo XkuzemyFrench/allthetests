@@ -16,5 +16,9 @@ jobs:
       
 workflows:
   build:
+    parameters: 
+      bilou:
+        type: boolean
+        default: true
     jobs:
       - try
