@@ -13,6 +13,7 @@ jobs:
       - run: echo << parameters.condition >>
       
 workflows:
+version: 2
   welcome:
     jobs:
       - trymote
