@@ -4,7 +4,7 @@ jobs:
   build:
     parameters: 
       condition:
-        type: string
+        type: boolean
         
     docker:
       - image: circleci/python
