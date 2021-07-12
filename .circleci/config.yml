@@ -20,6 +20,7 @@ workflows:
       - try:
           pre-steps:
             - run: |
+                echo $FOO
                 if [[ $FOO = "tototiti" ]]; then
                  echo "Hello"
                 fi
