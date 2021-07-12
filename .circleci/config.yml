@@ -4,8 +4,8 @@ jobs:
   try:
     parameters: 
       condition:
-        type: string
-        default: blaaaaaaaah
+        type: env_var_name
+        default: FOO
         
     docker:
       - image: circleci/python
