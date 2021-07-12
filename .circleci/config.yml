@@ -12,6 +12,7 @@ jobs:
     steps:
       - run: echo "Hello there"
       - run: echo << parameters.condition >>
+      - run: echo $FOO
       
 workflows:
   build:
