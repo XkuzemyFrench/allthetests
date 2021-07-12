@@ -16,11 +16,10 @@ jobs:
       
 workflows:
   build:
-    parameters: 
-      bilou:
-        type: env_var_name
-        default: FOO
     jobs:
       - try:
-          post-steps:
-            - run: echo ${<< parameters.bilou >>}
+          pre-steps:
+            - run: |
+                if [[ $FOO = "tototiti" ]]; then
+                 echo "Hello"
+                fi
