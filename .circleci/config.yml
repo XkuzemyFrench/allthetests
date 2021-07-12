@@ -1,21 +1,17 @@
 version: 2.1
 
-parameters: 
-  condition:
-    type: string
-    default: $condition_needed
-
 jobs:
   trymote:
+    parameters: 
+      condition:
+        type: string
+        
     docker:
       - image: circleci/python
     steps:
       - run: echo "Hello there"
-      - run: echo << pipeline.parameters.condition >>
+      - run: echo << parameters.condition >>
       
-      
-    
- 
 workflows:
   welcome:
     jobs:
