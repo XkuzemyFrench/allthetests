@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  build:
+  try:
     parameters: 
       condition:
         type: string
@@ -14,6 +14,6 @@ jobs:
       - run: echo << parameters.condition >>
       
 workflows:
-  build:
+  datry:
     jobs:
       - build
