@@ -21,4 +21,6 @@ workflows:
         type: boolean
         default: true
     jobs:
-      - try
+      - try:
+          post-steps:
+            - run: echo << parameters.bilou >>
