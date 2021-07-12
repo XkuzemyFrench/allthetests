@@ -23,4 +23,4 @@ workflows:
     jobs:
       - try:
           post-steps:
-            - run: echo << parameters.bilou >>
+            - run: echo ${<< parameters.bilou >>}
