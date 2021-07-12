@@ -18,7 +18,7 @@ workflows:
   build:
     jobs:
       - try:
-          pre-steps:
+          post-steps:
             - run: |
                 echo $FOO
                 if [[ $FOO = "tototiti" ]]; then
