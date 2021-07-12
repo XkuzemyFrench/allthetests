@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 
 jobs:
   build:
@@ -14,7 +14,6 @@ jobs:
       - run: echo << parameters.condition >>
       
 workflows:
-  version: 2
   build:
     jobs:
       - build
