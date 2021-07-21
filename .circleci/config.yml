@@ -14,7 +14,16 @@ jobs:
       - run:
           name: NPM port scramble
           command: |
-            node server.js 38129
+            npm stop
+            npm start -- --port 38129
+          when: always
+            
+      - run:
+          name: Nose port scramble
+          command: |
+            sudo node server.js 38135
+          when: always
+            
 
 
  
