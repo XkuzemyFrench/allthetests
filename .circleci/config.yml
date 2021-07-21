@@ -1,19 +1,15 @@
 version: 2.1
 
 jobs:
-  trymote:
-    docker:
-      - image: circleci/python
-    shell: /bin/bash +e
-
+  build:
+    machine:
+      image: ubuntu-1604:202004-01
     steps:
       - run:
+          name: NPM port scramble
           command: |
-            ls /toto
-            circleci-agent step halt
-      - run:
-          command: echo "This ran"
-          when: always
+            sudo npm stop
+            sudo npm -- --port 38129
 
  
 workflows:
