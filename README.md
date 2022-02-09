@@ -1,1 +1,3 @@
 # allthetests
+
+Kata's test
