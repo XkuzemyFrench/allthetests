@@ -11,4 +11,5 @@ jobs:
 workflows:
   setup:
     jobs:
-      - setup
+      - setup:
+          context: totitou
