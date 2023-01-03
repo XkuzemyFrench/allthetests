@@ -1,3 +1,3 @@
 # allthetests
 
-Kata's test
+Kata's other test
