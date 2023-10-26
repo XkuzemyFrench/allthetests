@@ -7,7 +7,6 @@ jobs:
     steps:
       - run: echo $Kata_test
     
-
 workflows:
   setup:
     jobs:
