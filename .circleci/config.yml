@@ -6,6 +6,7 @@ jobs:
       - image: circleci/python
     steps:
       - run: echo $Kata_test
+
     
 workflows:
   setup:
